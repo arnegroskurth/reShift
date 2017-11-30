@@ -4,7 +4,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter, routerReducer, routerMiddleware/*, push*/ } from 'react-router-redux'
-import employees from './reducers/Employees';
+import employees from './reducers/Employees'
 import AppComponent from './components/App'
 import './index.css'
 
