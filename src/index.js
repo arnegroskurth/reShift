@@ -4,9 +4,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter, routerReducer, routerMiddleware/*, push*/ } from 'react-router-redux'
+import './index.css'
 import employees from './reducers/Employees'
 import AppComponent from './components/App'
-import './index.css'
+import registerServiceWorker from './registerServiceWorker'
+
 
 // load persisted state from localStorage
 const persistedState = localStorage.getItem('state') ? JSON.parse(localStorage.getItem('state')) : {};
@@ -38,3 +40,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+registerServiceWorker();
