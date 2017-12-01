@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch) => {
 
         onRemoveEmployee: (e) => {
 
-            let employeeId = parseInt(e.target.parentElement.getAttribute('id'));
+            let employeeId = parseInt(e.target.parentElement.getAttribute('id'), 10);
 
             dispatch(removeEmployee(employeeId));
         }
