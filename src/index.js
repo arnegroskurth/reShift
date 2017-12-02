@@ -4,10 +4,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter, routerReducer, routerMiddleware/*, push*/ } from 'react-router-redux'
-import './index.css'
 import employees from './reducers/Employees'
 import AppComponent from './components/App'
 import registerServiceWorker from './registerServiceWorker'
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap-theme.min.css'
+import './index.css'
 
 
 // load persisted state from localStorage
