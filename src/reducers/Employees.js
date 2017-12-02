@@ -5,13 +5,17 @@ export default (state = [], action) => {
 
     switch (action.type)
     {
-        case ADD_EMPLOYEE: return [
-            ...state,
-            {
-                id: action.id,
-                name: action.name,
-            }
-        ];
+        case ADD_EMPLOYEE:
+
+            const maxId = state.reduce((acc, curr) => (acc > curr.id) ? acc : curr.id, 0);
+
+            return [
+                ...state,
+                {
+                    id: maxId + 1,
+                    name: action.name,
+                }
+            ];
 
         case REMOVE_EMPLOYEE: return state.filter((employee) => {
 
