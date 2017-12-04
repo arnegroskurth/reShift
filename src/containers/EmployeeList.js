@@ -20,6 +20,8 @@ const mapDispatchToProps = (dispatch) => {
             let nameInput = e.target.elements.namedItem('name');
             let action = addEmployee(nameInput.value);
 
+            if (!nameInput.value) return;
+
             nameInput.value = '';
 
             dispatch(action);
@@ -27,7 +29,7 @@ const mapDispatchToProps = (dispatch) => {
 
         onRemoveEmployee: (e) => {
 
-            let employeeId = parseInt(e.target.parentElement.getAttribute('id'), 10);
+            let employeeId = parseInt(e.currentTarget.parentElement.parentElement.getAttribute('id'), 10);
 
             dispatch(removeEmployee(employeeId));
         }

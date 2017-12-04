@@ -11,10 +11,10 @@ const AppComponent = () => (
                 <h1>Dienstplaner</h1>
                 <Nav bsStyle="tabs">
                     <IndexLinkContainer to="/">
-                        <NavItem>Home</NavItem>
+                        <NavItem>Dienstplan</NavItem>
                     </IndexLinkContainer>
                     <IndexLinkContainer to="/employees">
-                        <NavItem>Employees</NavItem>
+                        <NavItem>Mitarbeiter</NavItem>
                     </IndexLinkContainer>
                 </Nav>
 
