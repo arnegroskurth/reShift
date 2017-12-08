@@ -1,4 +1,4 @@
-import {REMOVE_EVENT, SAVE_EVENT} from "../actions";
+import {REMOVE_EMPLOYEE, REMOVE_EVENT, SAVE_EVENT} from "../actions";
 
 export default (state = [], action) => {
 
@@ -28,6 +28,10 @@ export default (state = [], action) => {
         case REMOVE_EVENT:
 
             return state.filter((event) => event.id !== action.id);
+
+        case REMOVE_EMPLOYEE:
+
+            return state.filter((event) => event.employee !== action.id);
 
         default: break;
     }
