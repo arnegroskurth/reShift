@@ -6,3 +6,16 @@ h1 {
 ul.nav {
     margin-bottom: 1em;
 }
+
+.employee-list {
+    font-size: 150%;
+    line-height: 150%;
+    padding: 1em 0;
+}
+.employee-list > span {
+    margin-right: .5em;
+}
+
+.event-wrapper .rbc-event {
+    background: none;
+}

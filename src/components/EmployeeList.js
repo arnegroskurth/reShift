@@ -23,6 +23,7 @@ const EmployeeListComponent = ({employees, onAddEmployee, onRemoveEmployee}) => 
         <table className="table table-hover table-responsive">
             <thead>
                 <tr>
+                    <th width="1">&nbsp;</th>
                     <th>Name</th>
                     <th>&nbsp;</th>
                 </tr>
@@ -30,7 +31,12 @@ const EmployeeListComponent = ({employees, onAddEmployee, onRemoveEmployee}) => 
             <tbody>
                 {employees.length ? employees.map((employee) => (
                     <tr key={employee.id} id={employee.id}>
-                        <td>{employee.name}</td>
+                        <td>
+                            <span className="badge" style={{backgroundColor: employee.color}}>&nbsp;</span>
+                        </td>
+                        <td>
+                            {employee.name}
+                        </td>
                         <td>
                             <Button bsStyle="danger" bsSize="xsmall" className="pull-right" onClick={onRemoveEmployee}>
                                 <i className="glyphicon glyphicon-trash" />
@@ -39,7 +45,7 @@ const EmployeeListComponent = ({employees, onAddEmployee, onRemoveEmployee}) => 
                     </tr>
                 )) :
                     <tr>
-                        <td colSpan="2">
+                        <td colSpan="3">
                             <em>Keine Einträge</em>
                         </td>
                     </tr>
