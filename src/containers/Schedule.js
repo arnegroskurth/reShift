@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 import ScheduleComponent from '../components/Schedule';
-import {saveEvent, closeEventOverlay, selectEvent, selectSlot} from '../actions';
+import {saveEvent, closeEventOverlay, selectEvent, selectSlot, removeEvent} from '../actions';
 
 const mapStateToProps = (state) => {
 
@@ -64,6 +64,14 @@ const mapDispatchToProps = (dispatch) => {
                 (new Date(fromString)).getTime(),
                 (new Date(toString)).getTime()
             ));
+        },
+
+        removeEvent: (e) => {
+
+            const formElements = e.target.parentElement.parentElement.elements;
+            const eventId = parseInt(formElements.namedItem('id').value, 10);
+
+            return dispatch(removeEvent(eventId));
         },
 
         closeEventOverlay: () => dispatch(closeEventOverlay()),

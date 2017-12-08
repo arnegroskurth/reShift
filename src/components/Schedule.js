@@ -38,7 +38,7 @@ class Event extends React.Component
     }
 }
 
-const ScheduleComponent = ({employees, eventOverlay, events, onSelectEvent, onSelectSlot, closeEventOverlay, saveEvent}) => (
+const ScheduleComponent = ({employees, eventOverlay, events, onSelectEvent, onSelectSlot, closeEventOverlay, removeEvent, saveEvent}) => (
     <div>
         <div style={{height: '40em'}}>
             <BigCalendar
@@ -90,8 +90,11 @@ const ScheduleComponent = ({employees, eventOverlay, events, onSelectEvent, onSe
                     <FieldGroup id="event-to-input" type="date" name="to" label="Bis" defaultValue={eventOverlay.event.to ? formatDateForInput(eventOverlay.event.to) : ''} required />
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button type="submit" bsStyle="primary">Speichern</Button>
+                    {eventOverlay.event.id ? (
+                        <Button onClick={removeEvent} bsStyle="danger" className="pull-left">Löschen</Button>
+                    ) : ''}
                     <Button onClick={closeEventOverlay}>Abbrechen</Button>
+                    <Button type="submit" bsStyle="primary">Speichern</Button>
                 </Modal.Footer>
             </Form>
         </Modal>

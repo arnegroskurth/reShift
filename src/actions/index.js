@@ -3,6 +3,7 @@ export const ADD_EMPLOYEE = 'ADD_EMPLOYEE';
 export const REMOVE_EMPLOYEE = 'REMOVE_EMPLOYEE';
 
 export const SAVE_EVENT = 'SAVE_EVENT';
+export const REMOVE_EVENT = 'REMOVE_EVENT';
 
 export const SELECT_EVENT = 'SELECT_EVENT';
 export const SELECT_SLOT = 'SELECT_SLOT';
@@ -53,6 +54,14 @@ export const selectEvent = (event) => {
     return {
         type: SELECT_EVENT,
         event,
+    };
+};
+
+export const removeEvent = (id) => {
+
+    return {
+        type: REMOVE_EVENT,
+        id,
     };
 };
 

@@ -1,4 +1,4 @@
-import {SAVE_EVENT} from "../actions";
+import {REMOVE_EVENT, SAVE_EVENT} from "../actions";
 
 export default (state = [], action) => {
 
@@ -24,6 +24,10 @@ export default (state = [], action) => {
                     }),
                 ];
             }
+
+        case REMOVE_EVENT:
+
+            return state.filter((event) => event.id !== action.id);
 
         default: break;
     }

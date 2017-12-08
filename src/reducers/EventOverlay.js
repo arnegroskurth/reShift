@@ -1,6 +1,6 @@
 
 import {SELECT_SLOT} from "../actions/index";
-import {CLOSE_EVENT_OVERLAY, SAVE_EVENT, SELECT_EVENT} from "../actions";
+import {CLOSE_EVENT_OVERLAY, REMOVE_EVENT, SAVE_EVENT, SELECT_EVENT} from "../actions";
 
 const initialState = {
     showOverlay: false,
@@ -45,6 +45,7 @@ export default (state = initialState, action) => {
             };
 
         case SAVE_EVENT:
+        case REMOVE_EVENT:
         case CLOSE_EVENT_OVERLAY:
 
             return {
