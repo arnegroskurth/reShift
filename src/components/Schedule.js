@@ -13,7 +13,7 @@ const formatDateForInput = (timestamp) => {
 const FieldGroup = ({ id, type, label, help, ...props }) => (
     <FormGroup controlId={id}>
         <Col componentClass={ControlLabel} sm={2}>{label}</Col>
-        <Col sm={8}>
+        <Col sm={10}>
             {(type === 'select') ? (
                 <FormControl componentClass="select" {...props}>
                     {props.children}
